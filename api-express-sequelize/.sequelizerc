@@ -1,0 +1,11 @@
+'use strict';
+
+const env = require('dotenv');
+const path = require('path');
+
+env.config();
+
+module.exports = {
+    'config': path.resolve(__dirname, 'src', 'database', 'config.js'),
+    'migrations-path': path.resolve(__dirname, 'src', 'database', 'migrations')
+};

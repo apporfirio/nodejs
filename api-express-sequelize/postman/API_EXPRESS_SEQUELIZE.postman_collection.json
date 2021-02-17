@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "105c73c0-76bd-4e60-9822-1809a0a5965c",
+		"name": "API_EXPRESS_SEQUELIZE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login unsuário",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"usuario1@empresa1.com\",\n    \"senha\": \"senhaUsuario1!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inserir pagamento (1)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": 100.00,\n    \"parcelas\": 1,\n    \"modo\": \"debito\",\n    \"data\": \"2020-12-17 13:10:05\",\n    \"codigoChip\": \"123BR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/privado/pagamento",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"privado",
+						"pagamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inserir pagamento (2)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": \"150.55\",\n    \"parcelas\": 1,\n    \"modo\": \"Débito\",\n    \"data\": \"2020-12-17 14:10:05\",\n    \"codigoChip\": \"123BR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/privado/pagamento",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"privado",
+						"pagamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inserir pagamento (3)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": 1500.00,\n    \"parcelas\": 10,\n    \"modo\": \"crédito\",\n    \"data\": \"2020-12-17 15:10:05\",\n    \"codigoChip\": \"123BR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/privado/pagamento",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"privado",
+						"pagamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "inserir pagamento (4)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"valor\": \"150000.00\",\n    \"parcelas\": 150,\n    \"modo\": \"Crédito\",\n    \"data\": \"2020-12-17 16:10:05\",\n    \"codigoChip\": \"123BR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/privado/pagamento",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"privado",
+						"pagamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar pagamentos por chip",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3001/privado/pagamento/123BR",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"privado",
+						"pagamento",
+						"123BR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelar pagamento",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3001/privado/pagamento/7",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"privado",
+						"pagamento",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar pagamento",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3001/privado/pagamento/0",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"privado",
+						"pagamento",
+						"0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
